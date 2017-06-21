@@ -46,7 +46,7 @@ for listSize in range(1000,10001,1000):
     print ('size: %d. Time: %f', listSize, end-start)
 '''    
 '''lists are different from dictionaries. Dicts allow you to access elements based on a key rather than a position'''
-'''stacks are fundamentally important because they canbe used to reverse the order of items. LIFO. Like a Back
+'''stacks are fundamentally important because they can be used to reverse the order of items. LIFO. Like a Back
    button on a browswer.'''
 ''' Stack code to reverse an input.
 from test import testEqual

@@ -33,4 +33,6 @@ answer = ''
 for j in convert:
     if j in translator:
         answer += translator.get(j)
+    if j not in translator:
+        answer += j
 print(answer)
