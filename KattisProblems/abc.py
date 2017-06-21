@@ -1,16 +1,14 @@
 numbers = input().split(' ')
 letters = input()
-
-numbers = sorted(numbers)
-print (numbers)
-
 answer = ''
+numbers2 = sorted(numbers)
+
 for i in letters:
     if i == 'A':
-        answer += numbers[0] + ' '
+        answer += numbers2[0] + ' '
     elif i == 'B':
-        answer += numbers[1] + ' '
+        answer += numbers2[1] + ' '
     elif i == 'C':
-        answer += numbers[2] + ' '
+        answer += numbers2[2] + ' '
 
 print(answer)
