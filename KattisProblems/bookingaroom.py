@@ -1,24 +1,21 @@
-rAndN = input().split(' ')
-r = int(rAndN[0])
-n = int(rAndN[1])
+RN = input().split(' ')
+r = int(RN[0])
+n = int(RN[1])
 br = []
 roomsArray = []
+
 for i in range(n):
     b = int(input())
     br.append(b)
 
-for j in range(r):
+for j in range(1, r + 1):
     roomsArray.append(j)
-roomsArray1 = roomsArray
 
-for k in range(len(br)):
-    roomsArray1.remove(k)
+for k in br:
+    if k in roomsArray:
+        roomsArray.remove(k)
 
 if n == r:
     print('too late')
 else:
-    print(roomsArray1[0])
-
-'''
-Refine logic for printing out booked rooms. Something is fucky.
-'''
+    print(roomsArray[0])
