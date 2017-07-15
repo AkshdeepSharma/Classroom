@@ -18,4 +18,11 @@ for l in range(len(question)):
     if question[l] == guessGoran[l]:
         scoreGoran += 1
 
-print(max(scoreAdrian, scoreBruno, scoreGoran))
+num = max(scoreAdrian, scoreBruno, scoreGoran)
+print(num)
+if num == scoreAdrian:
+    print('Adrian')
+if num == scoreBruno:
+    print('Bruno')
+if num == scoreGoran:
+    print('Goran')
