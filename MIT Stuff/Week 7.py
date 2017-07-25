@@ -1,4 +1,6 @@
 import pylab as plt
+
+'''
 plt.show()
 mySamples = []
 myLinear = []
@@ -45,3 +47,25 @@ plt.title('Exponential')
 plt.xlabel('Sample Points')
 plt.ylabel('Exponential Function')
 plt.plot(mySamples, myExponential)
+'''
+
+
+def retire(monthly, rate, terms):
+    base = [0]
+    savings = [0]
+    mRate = rate / 12
+    for i in range(terms):
+        base += [i]
+        savings += [savings[-1] * (1 + mRate) + monthly]
+    return base, savings
+
+
+def displayRetireMonthlies(monthlies, rate, terms):
+    plt.figure('retireMonth')
+    plt.clf()
+    for monthly in monthlies:
+        xvals, yvals = retire(monthly, rate, terms)
+        plt.plot(xvals, yvals, label='Retire:'+str(monthly))
+        plt.legend(loc='upper left')
+
+displayRetireMonthlies([500, 600, 700, 800, 900, 1000, 1100], 0.05, 40 * 12)
