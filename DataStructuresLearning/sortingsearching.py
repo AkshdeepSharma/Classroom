@@ -18,7 +18,7 @@ while guess != num:
 
 print('It took', str(numGuesses), 'guesses to guess your number.')
 '''
-
+'''
 #HASHING IS FUCKING SICK.
 class HashTable:
     def __init__(self):
@@ -96,3 +96,6 @@ print(H[17])
 H[20] = 'duck'
 print(H[20])
 print(H[99])
+'''
+# Sorting Methods:
+# Bubble, Selection, Insertion, Shell, Merge, Quick
