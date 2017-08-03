@@ -41,9 +41,9 @@ elif sum(answer2) == 0:
     answer2 = ['0']
 answer1 = [str(x) for x in answer1]
 answer2 = [str(x) for x in answer2]
-print(''.join(answer1))
-print(''.join(answer2))
-
-'''
-    all logic = good except the numbers dont print out in right order sometimes (if num2 len > num1
-'''
+if len(num2) > len(num1):
+    print(''.join(answer2))
+    print(''.join(answer1))
+else:
+    print(''.join(answer1))
+    print(''.join(answer2))
