@@ -11,7 +11,7 @@ def request_pro_game():
     parsed_data = json.loads(response.decode())
     for i in range(len(parsed_data)):
         if parsed_data[i]['leagueid'] == 5401:
-            match_id = parsed_data[0]['match_id']
+            match_id = parsed_data[i]['match_id']
             break
     return match_id
 
@@ -20,21 +20,19 @@ def request_match_info(match_id):
     with urllib.request.urlopen('https://api.opendota.com/api/matches/' + str(match_id)) as url:
         response = url.read()
     parsed_data = json.loads(response.decode())
-    return parsed_data['radiant_team'][0]
+    radiant_data = parsed_data['radiant_team']['name'], 'Barracks:', parsed_data['barracks_status_radiant'], \
+                   'Kills:', parsed_data['radiant_score'], 'Towers:', parsed_data['tower_status_radiant'], \
+                   'XP and Gold Advantage:', parsed_data['radiant_gold_adv'], parsed_data['radiant_xp_adv']
+    dire_data = parsed_data['dire_team']['name'], 'Barracks:', parsed_data['barracks_status_dire'], 'Kills:', \
+                parsed_data['dire_score'], 'Towers:', parsed_data['tower_status_dire']
+    if parsed_data['radiant_win']:
+        victory = "Radiant Victory"
+    else:
+        victory = "Dire Victory"
+    return radiant_data, dire_data, victory
 
 
 while True:
     game_id = request_pro_game()
     print(request_match_info(game_id))
     time.sleep(10)
-
-
-'''
-    for i in range(len(parsed_data)):
-        if parsed_data[i]['leagueid'] == 5401:
-            teams.append('Radiant: ' + parsed_data[i]['radiant_name'])
-            teams.append('Dire: ' + parsed_data[i]['dire_name'])
-            if parsed_data[i]['radiant_win']:
-                teams.append(parsed_data[i]['radiant_name'] + ' Victory')
-            elif not parsed_data[i]['radiant_win']:
-                teams.append(parsed_data[i]['dire_name'] + ' Victory')'''
