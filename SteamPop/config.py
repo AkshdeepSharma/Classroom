@@ -1,7 +1,7 @@
 import tweepy
 
 #steam stuff
-steam_key = '5D2799C66902D2A91E7E123B319DA43D'
+steam_key = '1DCBE0FBFE7F706CC8A71EDEF17DF31B'
 
 
 #twitter stuff
