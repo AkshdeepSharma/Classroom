@@ -1,17 +1,14 @@
 N = int(input())
 cups = []
-cupsColours = []
-
+copycups = []
 for i in range(N):
-    cups.append(int(input().split(' ')))
+    a, b = input().split()
+    try:
+        cups.append([int(b), a])
+    except:
+        cups.append([int(a) // 2, b])
 
+cups = sorted(cups, key=lambda x: x[0])
 
-'''for k in range(N):
-    if type(cups[k][0]) == float:
-        cups[k][0] = cups[k][0] / 2
-'''
-
-
-print(cups)
-
-print("\n".join(cupsColours))
+for k in range(len(cups)):
+    print(cups[k][1])
