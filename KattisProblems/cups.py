@@ -1,6 +1,6 @@
 N = int(input())
 cups = []
-copycups = []
+
 for i in range(N):
     a, b = input().split()
     try:
