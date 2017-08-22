@@ -25,13 +25,14 @@ class SinglyLinkedList:
     def setHead(self, head):
         self.head = head
 
-    # Method for inserting a new node at the start of a Linked List
-    def insert_at_front(self, data):
-        newNode = Node()
-        newNode.setData(data)
-
+    # method for inserting a new node at the end of a Linked List
+    def insertAtEnd(self, data):
+        new_node = Node()
+        new_node.setData(data)
         if self.head is None:
-            self.head = newNode
+            self.head = new_node
         else:
-            newNode.setNext(self.head)
-            self.head = newNode
+            current = self.head
+            while current.getNext() is not None:
+                current = current.getNext()
+            current.setNext(new_node)
