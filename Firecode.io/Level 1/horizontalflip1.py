@@ -1,8 +1,6 @@
 def flip_horizontal_axis(matrix):
-    for i in range(len(matrix) // 2):
-        temp = matrix[len(matrix) - (i + 1)]
-        temp2 = matrix[i]
-        matrix.insert(len(matrix) - i, temp2)
-        matrix.insert(i, temp)
-        del matrix[len(matrix) - (i + 2)]
-        del matrix[i + 1]
+    count = len(matrix)
+    for i in range(len(matrix) - 1, -1, -1):
+        matrix.append(matrix[i])
+    for j in range(count):
+        del matrix[0]
