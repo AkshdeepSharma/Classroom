@@ -1,7 +1,3 @@
-first = "*i*d?"
-second = "fabfire"
-
-
 def match(first, second):
     compare = ""
     answer = ""
@@ -24,4 +20,3 @@ def match(first, second):
     if second == answer:
         return True
     return False
-print(match(first, second))
