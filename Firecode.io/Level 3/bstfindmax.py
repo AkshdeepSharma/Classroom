@@ -10,13 +10,21 @@ class TreeNode:
 
 class BinaryTree:
     def __init__(self, root_node=None):
-        # Check out Use Me section to find out Node Structure
         self.root = root_node
 
-    def find_min(self):
+    # Iterative Solution
+    def find_max(self, root):
         current = self.root
         if current is None:
             return None
-        while current.left_child:
-            current = current.left_child
+        while current.right_child:
+            current = current.right_child
         return TreeNode(current)
+
+    # Recursive Solution
+    def find_max1(self, root):
+        if root is None:
+            return None
+        if root.right_child is None:
+            return root
+        return self.find_max(root.right_child)
