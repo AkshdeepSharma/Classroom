@@ -5,7 +5,7 @@ array = []
 
 def Sieverino (array):
     l = 1
-    #creates an array from 2 to max_value
+    # creates an array from 2 to max_value
     for i in range(2, max_value + 1):
         array.append(i)
 
