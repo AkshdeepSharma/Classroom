@@ -14,7 +14,7 @@ class BinaryTree:
         self.root = root_node
 
     def insert(self, root, data):
-        if self.root is None:
+        if root is None:
             root = TreeNode(data)
         elif data < root.data:
             root.left_child = self.insert(root.left_child, data)

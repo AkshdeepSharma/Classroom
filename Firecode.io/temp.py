@@ -1,0 +1,1 @@
+def excel_column_name_to_number(column_title):
