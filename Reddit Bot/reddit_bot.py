@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import praw
 import pyperclip
 
@@ -14,11 +15,11 @@ def paste_from_subreddit(subreddit_name, filter_word=''):
         if filter_word in submission.title:
             threadURL = submission.url
             threadTitle = submission.title
-            file = open("subredditlinks.txt", 'a')
-            pyperclip.copy(threadTitle + ' ')
-            file.write(pyperclip.paste())
-            pyperclip.copy(threadURL + '\n')
-            file.write(pyperclip.paste())
+            # file = open("subredditlinks.txt", 'a')
+            # pyperclip.copy(threadTitle + ' ')
+            # file.write(pyperclip.paste())
+            # pyperclip.copy(threadURL + '\n')
+            # file.write(pyperclip.paste())
             reddit.subreddit('TestYourBeepBoop').submit(threadTitle, url=threadURL)
 
 
