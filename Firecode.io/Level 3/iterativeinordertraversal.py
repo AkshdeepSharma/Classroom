@@ -5,19 +5,17 @@ class BinaryTree:
         self.right_child = None
 
     def inorder_iterative(self):
+        start = self
         inorder_list = []
         stack = []
-        while True:
-            while self is not None:
-                stack.append(self)
-                self = self.get_left_child()
-            if stack is []:
-                break
+        while stack or start:
+            if start:
+                stack.append(start)
+                start = start.left_child
             else:
-                self = stack.pop()
-                inorder_list.append(self.data)
-                self = self.get_right_child()
-        return inorder_list
+                item = stack.pop()
+                inorder_list.append(item)
+                start = item.right_child
 
     def get_right_child(self):
         return self.right_child
