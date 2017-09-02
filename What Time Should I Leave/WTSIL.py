@@ -30,7 +30,7 @@ def convert_hours(time):
     return int(hour) + (int(minute) / 60)
     
 # reads the information received from openweathermap.org
-with urllib.request.urlopen (urlWeather) as url:
+with urllib.request.urlopen(urlWeather) as url:
     responseWeather = url.read()
 
 # reads the information received from google maps
