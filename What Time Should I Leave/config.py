@@ -5,8 +5,8 @@ keyWeather = "dc47b4240975a85e682feb7263583f79"
 city = "Toronto"
 
 keyMaps = "AIzaSyCLXmY0azD5bedx87r5QunLj8G8Bs4B2DQ"
-origins = "origins=10+Villata+Gardens+Toronto+ON" #house address
-destinations = "&destinations=350+victoria+street+Toronto+ON" #school address
+origins = "origins=10+Villata+Gardens+Toronto+ON"  # house address
+destinations = "&destinations=350+victoria+street+Toronto+ON"  # school address
 
 phone1 = "+14164602402"
 phone2 = "+16475609236"
