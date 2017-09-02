@@ -143,3 +143,48 @@ What is your personal checklist for getting past a coding challenge? https://www
 [Java] Creating an object with stuff in it. https://www.reddit.com/r/learnprogramming/comments/5v91m9/java_creating_an_object_with_stuff_in_it/
 Guide: Web Development with Computer Science Foundations - comprehensive path https://www.reddit.com/r/learnprogramming/comments/5v1u0o/guide_web_development_with_computer_science/
 Here's part two of my tutorial series on creating a reddit bot using Python https://www.reddit.com/r/learnprogramming/comments/5v8tgn/heres_part_two_of_my_tutorial_series_on_creating/
+Algerian police officer killed after hugging a suicide bomber to protect his colleagues from the blast http://www.france24.com/en/20170831-algeria-suicide-bomb-attack-kills-two-police-officers-terrorism
+US-China mission rushes bomb-grade nuclear fuel out of Africa http://www.sciencemag.org/news/2017/08/us-china-mission-rushes-bomb-grade-nuclear-fuel-out-africa
+Nobel Prize Winners Name Trump and His 'Ignorance' as Top Threats to World Population https://www.commondreams.org/news/2017/08/31/nobel-prize-winners-name-trump-and-his-ignorance-top-threats-world-population
+Renters in the UK spend average of 62 per cent of income on rent https://www.nationalrentersalliance.co.uk/news/affordability/renters-uk-spend-average-62-per-cent-incomes-rent/
+Britain is 'home to 35,000 Islamist fanatics', more than any other country in Europe, top official warns http://www.telegraph.co.uk/news/2017/08/31/britain-home-35000-islamist-fanatics-country-europe-top-official/
+'Whoever leads in AI will rule the world’: Putin to Russian children on Knowledge Day https://www.rt.com/news/401731-ai-rule-world-putin/
+Smoke Seen Pouring From Chimney At San Francisco Russian Consulate http://talkingpointsmemo.com/news/smoke-russian-consulate-san-francisco?utm_content=buffer492e7&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+Some of the diplomats hurt in a mystery "sonic harassment attack" on the US embassy in Cuba suffered brain injuries or permanent hearing loss http://www.france24.com/en/20170901-us-diplomats-suffered-brain-injuries-cuba-attack
+Hubble discovers signs of water on newly discovered Earth-sized planets near Trappist-1 http://www.independent.co.uk/news/science/trappist-1-planets-water-hubble-discovery-life-potential-latest-a7923231.html
+BBC News: Judges annul Kenya presidential election http://www.bbc.co.uk/news/world-africa-41123329
+The discovery of a sunken Roman city 1,600 years old has shown it was devastated by an ancient tsunami http://www.newsweek.com/ancient-rome-sunken-city-devastated-tsunami-1600-years-ago-discovered-tunisian-658454
+UK Government's Treatment of Disabled People is a 'Human Catastrophe' says UN https://rightsinfo.org/governments-treatment-disabled-people-human-catastrophe-says-un/
+Malaria parasite spreads from howler monkeys to humans, 50 years after it was thought to have been eradicated from southern and south-eastern Brazil. https://www.theguardian.com/world/2017/sep/01/malaria-parasite-spreads-from-howler-monkeys-to-humans
+The oldest known human remains in the Americas have been found in a Mexican cave -- Dubbed the Young Man of Chan Hol, the remains date to 13,000 years ago https://www.seeker.com/culture/archaeology/the-oldest-known-human-remains-in-the-americas-have-been-found-in-a-mexican-cave
+A third of Bangladesh under water as flood devastation widens http://edition.cnn.com/2017/09/01/asia/bangladesh-south-asia-floods/index.html?sr=twCNN090117bangladesh-south-asia-floods0254PMVODtopw
+Reddit's main code is no longer open-source. https://www.reddit.com/r/changelog/comments/6xfyfg/an_update_on_the_state_of_the_redditreddit_and/
+Safari Accidentally Treating ';' as an Assignment Operator https://bugs.webkit.org/show_bug.cgi?id=176114
+Version 2.076.0 of DMD, the D reference compiler, released https://dlang.org/blog/2017/09/01/dmd-2-076-0-released/
+JOIN Elimination: An Essential Optimiser Feature for Advanced SQL Usage https://blog.jooq.org/2017/09/01/join-elimination-an-essential-optimiser-feature-for-advanced-sql-usage/
+Automatic database management system tuning through large-scale machine learning https://blog.acolyer.org/2017/08/11/automatic-database-management-system-tuning-through-large-scale-machine-learning/
+Immutability: The way to remain unchanged https://medium.com/@gdottin/immutability-the-way-to-remain-unchanged-ed047831595f
+Introducing exclusive features to GitLab.com: Bronze, Silver and Gold plans https://about.gitlab.com/2017/09/01/gitlab-com-paid-features/
+A Look at the Unique Threading Model of a Popular MMORPG Bot https://nickcano.com/bot-architecture-1/
+C++ Annotated: Apr - Aug 2017 https://blog.jetbrains.com/clion/2017/08/cpp-annotated-april-august-2017/
+Insane state of today's advertising part 3 https://plus.google.com/+ArtemRussakovskii/posts/53n5LdCYTbF
+ASP.NET Core 2.0: Action Discovery http://jackhiston.com/2017/9/2/aspnet-core-20-repository-overview-action-discovery/
+pyNMS: a vendor-agnostic Network Management System for network visualization, inventory and automation https://github.com/afourmy/pyNMS
+Microsoft Explores Manual Memory Management in .NET with Snowflake http://www.infoq.com/news/2017/09/snowflake
+Accelerating Deep Learning Research with the Tensor2Tensor Library https://research.googleblog.com/2017/06/accelerating-deep-learning-research.html?m=1
+5 Tips on Concurrency https://www.dzone.com/articles/7-tips-about-concurrency?source=pixelstech.net
+If every celebrity had a name like "Bill Nye the Science Guy," what would they be called? https://www.reddit.com/r/AskReddit/comments/6xevts/if_every_celebrity_had_a_name_like_bill_nye_the/
+Since we don't hear much about it, Ladies of Reddit, what was your worst "meet the mom" story? https://www.reddit.com/r/AskReddit/comments/6xj10s/since_we_dont_hear_much_about_it_ladies_of_reddit/
+Which villain actually had a point? https://www.reddit.com/r/AskReddit/comments/6xg0gu/which_villain_actually_had_a_point/
+What rap song would you show to people who "hate" rap music? https://www.reddit.com/r/AskReddit/comments/6xitw4/what_rap_song_would_you_show_to_people_who_hate/
+With Game of Thrones almost over, which book series do you think is most deserving of a big budget television adaptation? https://www.reddit.com/r/AskReddit/comments/6xf2g6/with_game_of_thrones_almost_over_which_book/
+Girls of Reddit, what kind of compliments do you like and dislike receiving from guys? https://www.reddit.com/r/AskReddit/comments/6xg3eo/girls_of_reddit_what_kind_of_compliments_do_you/
+What are you 100% sure of you saw, but nobody believes you? https://www.reddit.com/r/AskReddit/comments/6xdrcy/what_are_you_100_sure_of_you_saw_but_nobody/
+[Serious] What are some small, cheap improvements around the house that can make everyday life more enjoyable? https://www.reddit.com/r/AskReddit/comments/6xe2bt/serious_what_are_some_small_cheap_improvements/
+What was 'The Incident' at your school? https://www.reddit.com/r/AskReddit/comments/6xgg94/what_was_the_incident_at_your_school/
+Guys of reddit! What is your worst 'meeting the dad' moment when dating someone new? https://www.reddit.com/r/AskReddit/comments/6xeewo/guys_of_reddit_what_is_your_worst_meeting_the_dad/
+What is the "if you can speak Norwegian stick a potato in your throat and you can speak Danish" of other languages? https://www.reddit.com/r/AskReddit/comments/6xdd6c/what_is_the_if_you_can_speak_norwegian_stick_a/
+People who got fired on the first day of the job, what happened? https://www.reddit.com/r/AskReddit/comments/6xds0a/people_who_got_fired_on_the_first_day_of_the_job/
+[Serious] Redditors who have survived a dangerous situation, what is impossible to understand about being in a crisis until you are actually in one? https://www.reddit.com/r/AskReddit/comments/6xg8zy/serious_redditors_who_have_survived_a_dangerous/
+What is the weirdest fetish you have and/or heard of? https://www.reddit.com/r/AskReddit/comments/6xi3d4/what_is_the_weirdest_fetish_you_have_andor_heard/
+Who else thinks Reddit should have a 'hide read posts' option? https://www.reddit.com/r/AskReddit/comments/6xiois/who_else_thinks_reddit_should_have_a_hide_read/
