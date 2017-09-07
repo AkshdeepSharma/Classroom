@@ -1,7 +1,8 @@
 import input_data
 import tensorflow as tf
 
-mnist = input_data.read_data_sets("C:\\users\\akshdeep\\pycharmprojects\\workspace\\tensorflow practice\\", one_hot=True)
+mnist = input_data.read_data_sets("C:\\users\\akshdeep\\pycharmprojects\\workspace\\tensorflow practice\\",
+                                  one_hot=True)
 
 learning_rate = 0.01
 training_iteration = 30
@@ -21,7 +22,7 @@ w_h = tf.histogram_summary("weights", W)
 b_h = tf.histogram_summary("biases", b)
 
 with tf.name_scope("cost_function") as scope:
-    cost_function = tf.reduce_sum(y*tf.log(model))
+    cost_function = tf.reduce_sum(y * tf.log(model))
     tf.scalar_summary("cost_function", cost_function)
 
 with tf.name_scope("train") as scope:
@@ -38,10 +39,10 @@ with tf.Session() as sess:
 
     for iteration in range(training_iteration):
         avg_cost = 0
-        total_batch = int(mnist.train.num_examples/batch_size)
+        total_batch = int(mnist.train.num_examples / batch_size)
         for i in range(total_batch):
             batch_xs, batch_ys = mnist.train.next_batch(batch_size)
-            sess.run(optimizer, feed_dict={x: batch_xs, y: batch_ys})/total_batch
+            sess.run(optimizer, feed_dict={x: batch_xs, y: batch_ys}) / total_batch
             summary_str = sess.run(merged_summary_op, feed_dict={x: batch_xs, y: batch_ys})
             summary_writer.add_summary(summary_str, iteration * total_batch + i)
 
