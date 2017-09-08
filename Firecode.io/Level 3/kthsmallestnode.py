@@ -25,7 +25,7 @@ class BinaryTree:
 
         size_left = 0
 
-        if not root.left_child:
+        if root.left_child:
             size_left = self.size(root.left_child)
 
         if size_left + 1 == k:
