@@ -2,20 +2,30 @@ import numpy as np
 from scipy import optimize
 from matplotlib import pyplot as plt
 
+# X = (hours sleeping, hours studying), y = Score on test
+X = np.array(([3, 5], [5, 1], [10, 2]), dtype=float)
+y = np.array(([75], [82], [93]), dtype=float)
+
+# Normalize
+X = X / np.amax(X, axis=0)
+y = y / 100  # Max test score is 100
+
+
 class NeuralNetwork(object):
-
-    def __init__(self):
+    def __init__(self, Lambda=0):
         # Define Hyper-parameters
-        self.input_layer_size = 2
-        self.output_layer_size = 1
-        self.hidden_layer_size = 3
+        self.inputLayerSize = 2
+        self.outputLayerSize = 1
+        self.hiddenLayerSize = 3
 
-        # Weights
-        self.W1 = np.random.randn(self.input_layer_size, self.hidden_layer_size)
-        self.W2 = np.random.randn(self.hidden_layer_size, self.input_layer_size)
+        # Weights (parameters)
+        self.W1 = np.random.randn(self.inputLayerSize, self.hiddenLayerSize)
+        self.W2 = np.random.randn(self.hiddenLayerSize, self.outputLayerSize)
+
+        self.Lambda = Lambda
 
     def forward(self, X):
-        # Propagate inputs through network
+        # Propagate inputs though network
         self.z2 = np.dot(X, self.W1)
         self.a2 = self.sigmoid(self.z2)
         self.z3 = np.dot(self.a2, self.W2)
@@ -26,110 +36,104 @@ class NeuralNetwork(object):
         # Apply sigmoid activation function to scalar, vector, or matrix
         return 1 / (1 + np.exp(-z))
 
-    def sigmoid_prime(self, z):
+    def sigmoidPrime(self, z):
         # Gradient of sigmoid
         return np.exp(-z) / ((1 + np.exp(-z)) ** 2)
 
-    def cost_function(self, X, y):
-        # Compute cost for given X, y, use weights already stored in class
+    def costFunction(self, X, y):
+        # Compute cost for given X,y, use weights already stored in class.
         self.yHat = self.forward(X)
-        J = 0.5 * sum((y-self.yHat) ** 2)
+        J = 0.5 * sum((y - self.yHat) ** 2) / X.shape[0] + (self.Lambda / 2) * (sum(self.W1 ** 2) + sum(self.W2 ** 2))
         return J
 
-    def cost_function_prime(self, X, y):
-        # Computer derivative with respect to W and W2 for a given X and y
+    def costFunctionPrime(self, X, y):
+        # Compute derivative with respect to W and W2 for a given X and y:
         self.yHat = self.forward(X)
 
-        delta3 = np.multiply(-(y-self.yHat), self.sigmoid_prime(self.z3))
-        dJdW2 = np.dot(self.a2.T, delta3)
+        delta3 = np.multiply(-(y - self.yHat), self.sigmoidPrime(self.z3))
+        dJdW2 = np.dot(self.a2.T, delta3) + self.Lambda * self.W2
 
-        delta2 = np.dot(delta3, self.W2.T) * self.sigmoid_prime(self.z2)
-        dJdW1 = np.dot(X.T, delta2)
+        delta2 = np.dot(delta3, self.W2.T) * self.sigmoidPrime(self.z2)
+        dJdW1 = np.dot(X.T, delta2) + self.Lambda * self.W1
 
         return dJdW1, dJdW2
 
-    # Helper functions for interacting with other classes
-    def get_params(self):
+    # Helper Functions for interacting with other classes:
+    def getParams(self):
         # Get W1 and W2 unrolled into vector:
         params = np.concatenate((self.W1.ravel(), self.W2.ravel()))
         return params
 
-    def set_params(self, params):
-        # Get W1 and W2 using single parameter vector
+    def setParams(self, params):
+        # Set W1 and W2 using single parameter vector.
         W1_start = 0
-        W1_end = self.hidden_layer_size * self.input_layer_size
-        self.W1 = np.reshape(params[W1_start:W1_end], (self.input_layer_size, self.hidden_layer_size))
-        W2_end = W1_end + self.hidden_layer_size * self.output_layer_size
-        self.W2 = np.reshape(params[W1_end:W2_end], (self.hidden_layer_size, self.output_layer_size))
+        W1_end = self.hiddenLayerSize * self.inputLayerSize
+        self.W1 = np.reshape(params[W1_start:W1_end], (self.inputLayerSize, self.hiddenLayerSize))
+        W2_end = W1_end + self.hiddenLayerSize * self.outputLayerSize
+        self.W2 = np.reshape(params[W1_end:W2_end], (self.hiddenLayerSize, self.outputLayerSize))
 
-    def compute_gradients(self, X, y):
-        dJdW1, dJdW2 = self.cost_function_prime(X, y)
+    def computeGradients(self, X, y):
+        dJdW1, dJdW2 = self.costFunctionPrime(X, y)
         return np.concatenate((dJdW1.ravel(), dJdW2.ravel()))
 
 
-def compute_numerical_gradient(N, X, y):
-    params_initial = N.get_params()
-    numgrad = np.zeros(params_initial.shape)
-    perturb = np.zeros(params_initial.shape)
+def computeNumericalGradient(N, X, y):
+    paramsInitial = N.getParams()
+    numgrad = np.zeros(paramsInitial.shape)
+    perturb = np.zeros(paramsInitial.shape)
     e = 1e-4
 
-    for p in range(len(params_initial)):
+    for p in range(len(paramsInitial)):
         # Set perturbation vector
         perturb[p] = e
-        N.set_params(params_initial + perturb)
-        loss2 = N.cost_function(X, y)
+        N.setParams(paramsInitial + perturb)
+        loss2 = N.costFunction(X, y)
 
-        N.set_params(params_initial - perturb)
-        loss1 = N.cost_function(X, y)
+        N.setParams(paramsInitial - perturb)
+        loss1 = N.costFunction(X, y)
 
-        # Compute numerical gradient
+        # Compute Numerical Gradient
         numgrad[p] = (loss2 - loss1) / (2 * e)
 
-        # Return value changed to zero
+        # Return the value we changed to zero:
         perturb[p] = 0
 
-    # Return params to original value
-    N.set_params(params_initial)
+    # Return Params to original value:
+    N.setParams(paramsInitial)
 
     return numgrad
 
 
 class Trainer(object):
-
     def __init__(self, N):
-        # Make local reference to network
+        # Make Local reference to network:
         self.N = N
 
     def callbackF(self, params):
-        self.N.set_params(params)
-        self.J.append(self.N.cost_function(self.X, self.y))
+        self.N.setParams(params)
+        self.J.append(self.N.costFunction(self.X, self.y))
 
-    def cost_function_wrapper(self, params, X, y):
-        self.N.set_params(params)
-        cost = self.N.cost_function(X, y)
-        grad = self.N.compute_gradients(X, y)
-
+    def costFunctionWrapper(self, params, X, y):
+        self.N.setParams(params)
+        cost = self.N.costFunction(X, y)
+        grad = self.N.computeGradients(X, y)
         return cost, grad
 
     def train(self, X, y):
-        # Make an internal variable for the callback function
+        # Make an internal variable for the callback function:
         self.X = X
         self.y = y
 
-        # Make an empty list to store costs
+        # Make empty list to store costs:
         self.J = []
 
-        params0 = self.N.get_params()
+        params0 = self.N.getParams()
 
         options = {'maxiter': 200, 'disp': True}
-        _res = optimize.minimize(self.cost_function_wrapper, params0, jac=True, method='BFGS', args=(X, y), options=options, callback=self.callbackF)
-        self.N.set_params(_res.x)
+        _res = optimize.minimize(self.costFunctionWrapper, params0, jac=True, method='BFGS', args=(X, y), options=options, callback=self.callbackF)
+
+        self.N.setParams(_res.x)
         self.optimizationResults = _res
-
-
-# X = (hours sleeping, hours studying), y = Score on test
-X = np.array(([3,5], [5,1], [10,2]), dtype=float)
-y = np.array(([75], [82], [93]), dtype=float)
 
 NN = NeuralNetwork()
 
