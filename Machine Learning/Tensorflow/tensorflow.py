@@ -1,7 +1,7 @@
 import input_data
 import tensorflow as tf
 
-mnist = input_data.read_data_sets("C:\\users\\akshdeep\\pycharmprojects\\workspace\\tensorflow practice\\",
+mnist = input_data.read_data_sets("C:\\users\\akshdeep\\pycharmprojects\\Classroom\\tensorflow practice\\",
                                   one_hot=True)
 
 learning_rate = 0.01
