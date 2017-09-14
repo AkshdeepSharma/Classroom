@@ -1,2 +1,2 @@
-# workspace
-All private personal projects and problems.
+# Classroom
+Where all the learning happens.
