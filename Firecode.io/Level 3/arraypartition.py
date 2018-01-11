@@ -1,26 +1,20 @@
 def find_partitions(input_list):
     answer = []
-    if input_list is None or len(input_list) == 0:
-        return answer
-    if input_list == 1:
-        answer.append(str(input_list[0]))
-    previous = input_list[0]
-    first = previous
-    i = 1
-    while i < len(input_list):
-        if input_list[i] == previous + 1:
-            if i == len(input_list) - 1:
-                answer.append(str(first) + '-' + str(input_list[i]))
+    lower = input_list[0]
+    upper = input_list[0]
+    for num in input_list[1:]:
+        if num == upper + 1:
+            upper = num
+        elif lower == upper:
+            answer.append(upper)
+            lower = upper = num
         else:
-            if first == previous:
-                answer.append(str(first))
-            else:
-                answer.append(str(first) + '-' + str(previous))
-            if i == len(input_list) - 1:
-                answer.append(str(input_list[i]))
-            first = input_list[i]
-        previous = input_list[i]
-        i += 1
+            answer.append("%d-%d" % (lower, upper))
+            lower = upper = num
+    if lower == upper:
+        answer.append(upper)
+    else:
+        answer.append("%d-%d" % (lower, upper))
     return answer
 
 
