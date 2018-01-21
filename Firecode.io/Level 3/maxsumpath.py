@@ -10,18 +10,12 @@ class BinaryTree:
         self.root = root_node
 
     def max_sum_path(self, root):
-        max_recursive_holder = [0]
-        self.max_sum_path_main(root, max_recursive_holder)
-        return max_recursive_holder[0]
+        return self.helper(root, 0)[1]
 
-    def max_sum_path_main(self, root, max_recursive_holder):
+    def helper(self, root, curr_max):
         if root is None:
-            return 0
-        left_sum = self.max_sum_path_main(root.left_child, max_recursive_holder)
-        right_sum = self.max_sum_path_main(root.right_child, max_recursive_holder)
+            return 0, curr_max
+        l_down, l_max = self.helper(root.left_child, curr_max)
+        r_down, r_max = self.helper(root.right_child, curr_max)
 
-        node_cum_val = max(root.data + left_sum, root.data + right_sum)
-
-        max_recursive_holder[0] = max(max_recursive_holder[0], left_sum + right_sum + root.data)
-
-        return node_cum_val
+        return max(l_down, r_down) + root.data, max(l_max, r_max, curr_max, l_down + r_down + root.data)
