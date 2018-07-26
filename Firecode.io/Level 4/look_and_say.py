@@ -11,14 +11,13 @@ def look_and_say(sequence_number):
             if output[j] == output[j - 1]:
                 count += 1
             else:
-                temp += str(count)
-                temp += output[j - 1]
+                temp += str(str(count) + output[j - 1])
                 count = 1
 
-        temp += str(count)
-        temp += output[len(output) - 1]
+        temp += str(str(count) + output[len(output) - 1])
         output = temp
         i += 1
     return output
+
 
 print(look_and_say(7))
