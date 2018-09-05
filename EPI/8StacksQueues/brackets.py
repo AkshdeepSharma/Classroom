@@ -6,8 +6,10 @@ def brackets(s):
             stack.append(char)
         elif not stack or pairs[stack.pop()] != char:
             return False
+    if stack:
+        return False
     return True
 
 
-string = '{}{}([])'
+string = '(((((((('
 print(brackets(string))
