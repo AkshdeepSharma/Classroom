@@ -1,12 +1,10 @@
 def unique_chars_in_string(input_string):
-    check = ""
-    if len(input_string) == 0 or len(input_string) == 1:
-        return True
-    for _ in input_string:
-        if _ in check:
-            return False
+    dictionary = {}
+    for c in input_string:
+        if c not in dictionary:
+            dictionary[c] = 1
         else:
-            check += _
+            return False
     return True
 
 print(unique_chars_in_string('aa'))
