@@ -7,15 +7,13 @@ These files contain a lot of solutions to competitive programming problems solve
 * Kattis
 * Firecode.io
 * HackerRank
-* Will add some codefights later
+* Elements of Programming Interviews in Python
 
 **Also contains some useful resources (some are by me, some are not):**
 * Data structures help
 * Understanding Decorators
-* Genetic Algorithms
-* Machine Learning with SciKit-Learn, Tensorflow, and Neural Nets
 * MIT Introduction to Data Structures and Algorithms course work
 * Object-Oriented Programming in Python
 
 This repo gets updated regularly, as it is my main repo for doing any sort of experimentation, competitive programming problems, etc.
-Good luck!
+Good luck and I hope you find value in it!
