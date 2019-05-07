@@ -11,6 +11,6 @@ class Solution(object):
                 dic[i] += 1
             else:
                 dic[i] = 1
-        for key, val in dic.iteritems():
+        for key, val in dic.items():
             if val == N:
                 return key
