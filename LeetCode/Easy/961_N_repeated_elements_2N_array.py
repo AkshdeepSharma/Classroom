@@ -1,16 +1,8 @@
-class Solution(object):
-    def repeatedNTimes(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
-        dic = {}
-        N = len(A) // 2
-        for i in A:
-            if i in dic:
-                dic[i] += 1
-            else:
-                dic[i] = 1
-        for key, val in dic.items():
-            if val == N:
-                return key
+from collections import defaultdict
+class Solution:
+    def repeatedNTimes(self, A: List[int]) -> int:
+        dic = defaultdict(int)
+        for num in A:
+            dic[num] += 1
+            if dic[num] > 1:
+                return num
