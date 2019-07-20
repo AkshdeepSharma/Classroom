@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Solution(object):
     def isAnagram(self, s, t):
         """
@@ -7,21 +8,15 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-
-        chars = {}
+        chars = defaultdict(int)
         for c in s:
-            if c in chars:
-                chars[c] += 1
-            else:
-                chars[c] = 1
-
-        for ch in t:
-            if ch in chars:
-                chars[ch] -= 1
+            chars[c] += 1
+        for c in t:
+            if c in chars and chars[c] > 0:
+                chars[c] -= 1
             else:
                 return False
-
-        for count in chars.itervalues():
+        for count in chars.values():
             if count != 0:
                 return False
         return True
