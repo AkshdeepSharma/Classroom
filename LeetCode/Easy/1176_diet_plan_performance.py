@@ -8,7 +8,6 @@ class Solution(object):
         :rtype: int
         """
         res = 0
-        j = k
         for i in range(0, len(calories) - k + 1):
             if i == 0:
                 k_cals = sum(calories[i:i+k])
