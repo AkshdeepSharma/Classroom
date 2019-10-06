@@ -31,10 +31,10 @@ translate = {
 }
 
 for i in range(1, N + 1):
-    dial = ' '
     word = input()
-    for j in word:
-        if dial[-1] == translate.get(j)[0]:
-            dial += ' '
-        dial += translate.get(j)
+    dial = " "
+    for c in word:
+        if dial[-1] == translate.get(c)[0]:
+            dial += " "
+        dial += translate.get(c)
     print("Case #" + str(i) + ":" + dial)
