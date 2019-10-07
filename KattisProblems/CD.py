@@ -1,18 +1,22 @@
-def countCD(cd1, cd2):
-    hashset = set()
-    sell = 0
-    for _ in range(cd1):
-        catalog_num = input()
-        hashset.add(catalog_num)
-    for _ in range(cd2):
-        catalog_num = input()
-        if catalog_num in hashset:
-            sell += 1
-    return sell
+import sys
 
-if __name__ == "__main__":
+def helper(f, cd1, cd2):
+    hashset = set()
+    for _ in range(cd1 + cd2):
+        catalog_num = f.readline()
+        hashset.add(catalog_num)
+    return cd1 + cd2 - len(hashset)
+
+def countCD(f):
     while True:
-        cd1, cd2 = map(int, input().split())
+        cd1, cd2 = map(int, f.readline().split())
         if cd1 == 0 and cd2 == 0:
             break
-        print(countCD(cd1, cd2))
+        yield helper(f, cd1, cd2)
+
+def main(f):
+    for result in countCD(f):
+        print(result)
+
+if __name__ == "__main__":
+    main(sys.stdin)
