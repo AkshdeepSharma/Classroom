@@ -5,7 +5,7 @@ def phoneList(n):
     phone_numbers.sort()
     for i, val in enumerate(phone_numbers):
         for j in range(i + 1, len(phone_numbers)):
-            if phone_numbers[j].startswith(val):
+            if phone_numbers[j][:len(val)] == val:
                 return "NO"
             break
     return "YES"
