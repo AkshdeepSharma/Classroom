@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 def hashing_function(sentence):
     hash_val = 0
     for c in sentence:
