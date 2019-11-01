@@ -6,16 +6,11 @@ class Solution(object):
         """
         stack = []
         res = 0
-        for p in S:
-            if p == '(':
-                stack.append(p)
-            elif p == ')' and stack:
-                if stack[-1] == '(':
-                    stack.pop()
-                else:
-                    stack.append(p)
-                    res += 1
+        for c in S:
+            if c == "(":
+                stack.append(c)
+            elif c == ")" and stack:
+                stack.pop()
             else:
                 res += 1
-        res += len(stack)
-        return res
+        return res + len(stack)
