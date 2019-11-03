@@ -5,12 +5,12 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     def pruneTree(self, root: TreeNode) -> TreeNode:
-        if root is None:
-            return
-        root.left = self.pruneTree(root.left)
-        root.right = self.pruneTree(root.right)
-        if not root.left and not root.right and root.val == 0:
-            return None
+        if root:
+            root.left = self.pruneTree(root.left)
+            root.right = self.pruneTree(root.right)
+            if not root.left and not root.right and root.val == 0:
+                root = None
         return root
