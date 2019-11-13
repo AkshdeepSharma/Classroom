@@ -1,7 +1,5 @@
-def main():
-    N = int(input())
+def create_adjacency_list(N):
     adjacency_list = {}
-    paths = []
     for _ in range(N):
         stations = list(input().split())
         curr_station = stations[0]
@@ -15,15 +13,21 @@ def main():
     start, end = map(str, input().split())
     if start not in adjacency_list:
         adjacency_list[start] = set()
+    return adjacency_list, start, end
 
-    def dfs(start, end, graph, path=[]):
-        path = path + [start]
-        if start == end:
-            paths.append(path)
-        for next in graph[start]:
-            if next not in path:
-                dfs(next, end, graph, path)
 
+def dfs(start, end, graph, path=[]):
+    path = path + [start]
+    if start == end:
+        paths.append(path)
+    for next in graph[start]:
+        if next not in path:
+            dfs(next, end, graph, path)
+
+
+def main():
+    N = int(input())
+    adjacency_list, start, end = create_adjacency_list(N)
     dfs(start, end, adjacency_list)
     if paths == []:
         print("no route found")
@@ -32,4 +36,5 @@ def main():
 
 
 if __name__ == '__main__':
+    paths = []
     main()
