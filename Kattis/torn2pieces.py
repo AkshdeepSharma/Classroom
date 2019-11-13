@@ -3,17 +3,20 @@ def create_adjacency_list(N):
     for _ in range(N):
         stations = list(input().split())
         curr_station = stations[0]
-        if curr_station not in adjacency_list:
-            adjacency_list[curr_station] = set()
+        adjacency_list = add_in_adjacency_list(curr_station, adjacency_list)
         for i in range(1, len(stations)):
             adjacency_list[curr_station].add(stations[i])
-            if stations[i] not in adjacency_list:
-                adjacency_list[stations[i]] = set()
+            adjacency_list = add_in_adjacency_list(stations[i], adjacency_list)
             adjacency_list[stations[i]].add(curr_station)
     start, end = map(str, input().split())
-    if start not in adjacency_list:
-        adjacency_list[start] = set()
+    adjacency_list = add_in_adjacency_list(start, adjacency_list)
     return adjacency_list, start, end
+
+
+def add_in_adjacency_list(curr_station, adjacency_list):
+    if curr_station not in adjacency_list:
+        adjacency_list[curr_station] = set()
+    return adjacency_list
 
 
 def dfs(start, end, graph, path=[]):
