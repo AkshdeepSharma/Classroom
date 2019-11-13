@@ -3,17 +3,17 @@ def create_adjacency_list(N):
     for _ in range(N):
         stations = list(input().split())
         curr_station = stations[0]
-        adjacency_list = add_in_adjacency_list(curr_station, adjacency_list)
+        check_and_add_to_adjacency_list(curr_station, adjacency_list)
         for i in range(1, len(stations)):
             adjacency_list[curr_station].add(stations[i])
-            adjacency_list = add_in_adjacency_list(stations[i], adjacency_list)
+            check_and_add_to_adjacency_list(stations[i], adjacency_list)
             adjacency_list[stations[i]].add(curr_station)
     start, end = map(str, input().split())
-    adjacency_list = add_in_adjacency_list(start, adjacency_list)
+    check_and_add_to_adjacency_list(start, adjacency_list)
     return adjacency_list, start, end
 
 
-def add_in_adjacency_list(curr_station, adjacency_list):
+def check_and_add_to_adjacency_list(curr_station, adjacency_list):
     if curr_station not in adjacency_list:
         adjacency_list[curr_station] = set()
     return adjacency_list
