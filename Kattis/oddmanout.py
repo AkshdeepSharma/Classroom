@@ -1,10 +1,22 @@
-N = int(input())
-case = 0
-for i in range(N):
-    case += 1
-    b = int(input())
-    guestNums = input().split(' ')
-    guestNums = [int(x) for x in guestNums]
-    for j in range(len(guestNums)):
-        if guestNums.count(guestNums[j]) == 1:
-            print('Case #' + str(case) + ":", str(guestNums[j]))
+def odd_man_out(guests):
+    guests_dict = {}
+    for guest in guests:
+        if guest not in guests_dict:
+            guests_dict[guest] = 1
+        else:
+            guests_dict.pop(guest)
+    for key in guests_dict.keys():
+        return key
+
+
+def main():
+    N = int(input())
+    for i in range(1, N + 1):
+        num_guests = input()
+        guests = input().split()
+        guest = odd_man_out(guests)
+        print("Case #" + str(i) + ": " + guest)
+
+
+if __name__ == '__main__':
+    main()
