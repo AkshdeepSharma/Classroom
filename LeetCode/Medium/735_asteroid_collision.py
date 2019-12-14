@@ -6,7 +6,6 @@ class Solution(object):
         """
         stack = []
         for asteroid in asteroids:
-            equal = False
             if asteroid > 0 or not stack:
                 stack.append(asteroid)
             elif asteroid < 0:
