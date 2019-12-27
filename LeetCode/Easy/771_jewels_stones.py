@@ -6,10 +6,21 @@ class Solution:
         :rtype: int
         """
         count = 0
-        dic = {}
-        for jewel in J:
-            dic[jewel] = 1
+        jewels = set(J)
         for stone in S:
-            if stone in dic:
+            if stone in jewels:
                 count += 1
         return count
+
+'''Java
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        int count = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (J.contains(Character.toString(S.charAt(i))))
+                count += 1;
+        }
+        return count;
+    }
+}
+'''
