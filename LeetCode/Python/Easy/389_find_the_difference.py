@@ -1,20 +1,8 @@
-class Solution(object):
-    def findTheDifference(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
-        dict = {}
-        for c in s:
-            if c in dict:
-                dict[c] += 1
-            else:
-                dict[c] = 1
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        val = 0
         for c in t:
-            if c in dict:
-                dict[c] -= 1
-                if dict[c] == -1:
-                    return c
-            else:
-                return c
+            val += ord(c)
+        for c in s:
+            val -= ord(c)
+        return chr(val)
