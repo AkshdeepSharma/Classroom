@@ -1,22 +1,27 @@
-N = int(input())
-bus_numbers = sorted(list(map(int, input().split())))
-res = [str(bus_numbers[0])]
-
-for i in range(1, len(bus_numbers) - 1):
-    if (bus_numbers[i - 1] == "-" or bus_numbers[i - 1] + 1 == bus_numbers[i]) and bus_numbers[i + 1] - 1 == bus_numbers[i]:
-        if bus_numbers[i - 1] == "-":
-            bus_numbers[i] = "-"
-            continue
+def busnumbers(bus_numbers):
+    res = [bus_numbers[0]]
+    for i in range(1, len(bus_numbers) - 1):
+        if bus_numbers[i] - 1 == bus_numbers[i - 1] and bus_numbers[i] + 1 == bus_numbers[i + 1]:
+            if res[-1] == "-":
+                continue
+            res.append('-')
         else:
-            bus_numbers[i] = "-"
-            res.append("-")
+            if res[-1] == "-":
+                res.append(bus_numbers[i])
+            else:
+                res += [" ", bus_numbers[i]]
+    if res[-1] == "-":
+        res.append(bus_numbers[-1])
     else:
-        if bus_numbers[i - 1] == "-":
-            res += [str(bus_numbers[i])]
-        else:
-            res += [" ", str(bus_numbers[i])]
+        res += [" ", bus_numbers[-1]]
+    return "".join(map(str, res))
 
-if res[-1] == "-":
-    print("".join(res + [str(bus_numbers[-1])]))
-else:
-    print("".join(res + [" ", str(bus_numbers[-1])]))
+
+def main():
+    N = int(input())
+    bus_numbers = sorted(list(map(int, input().split())))
+    print(busnumbers(bus_numbers))
+
+
+if __name__ == "__main__":
+    main()
