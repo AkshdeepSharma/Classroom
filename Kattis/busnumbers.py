@@ -6,14 +6,12 @@ def busnumbers(bus_numbers):
                 continue
             res.append('-')
         else:
-            if res[-1] == "-":
-                res.append(bus_numbers[i])
-            else:
-                res += [" ", bus_numbers[i]]
-    if res[-1] == "-":
-        res.append(bus_numbers[-1])
-    else:
-        res += [" ", bus_numbers[-1]]
+            if res[-1] != "-":
+                res.append(" ")
+            res.append(bus_numbers[i])
+    if res[-1] != "-":
+        res.append(" ")
+    res.append(bus_numbers[-1])
     return "".join(map(str, res))
 
 
