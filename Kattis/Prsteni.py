@@ -1,10 +1,12 @@
 numberOfRings = int(input())
 ringSizes = list(input().strip().split(' '))
 
-def gcd (x, y):
+
+def gcd(x, y):
     while y != 0:
         (x, y) = (y, x % y)
     return x
+
 
 for j in range(1, numberOfRings):
     output = int(ringSizes[0]) // int(ringSizes[j])

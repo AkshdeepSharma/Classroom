@@ -31,7 +31,7 @@ blackTiles = {
     "H4": 1,
     "H6": 1,
     "H8": 1,
-    }
+}
 whiteTiles = {
     "A2": 1,
     "A4": 1,
@@ -80,17 +80,19 @@ board = [
 
 num_testcases = int(input())
 
+
 def findPath():
     positions = input()
     position1 = positions[0] + positions[2]
     position2 = positions[4] + positions[6]
-    if (position1 in blackTiles and position2 in whiteTiles) or (position1 in whiteTiles and position2 in blackTiles):     
+    if (position1 in blackTiles and position2 in whiteTiles) or (position1 in whiteTiles and position2 in blackTiles):
         return("Impossible")
     else:
         if position1 == position2:
             return("0 " + position1[0] + " " + position1[1])
         else:
-            row, col, row2, col2 = 8 - int(position1[1]), ord(position1[0]) - ord("A"), 8 - int(position2[1]), ord(position2[0]) - ord("A")
+            row, col, row2, col2 = 8 - int(position1[1]), ord(position1[0]) - ord(
+                "A"), 8 - int(position2[1]), ord(position2[0]) - ord("A")
             if abs(row2 - row) == abs(col2 - col):
                 return("1 " + position1[0] + " " + position1[1] + " " + position2[0] + " " + position2[1])
             else:
@@ -114,9 +116,10 @@ def findPath():
                         direction += 1
                     elif abs(row3 - row2) == abs(col3 - col2):
                         break
-                        
+
                 position3 = board[row3][col3]
                 return("2 " + position1[0] + " " + position1[1] + " " + position3[0] + " " + position3[1] + " " + position2[0] + " " + position2[1])
 
-for i in range(num_testcases): 
+
+for i in range(num_testcases):
     print(findPath())

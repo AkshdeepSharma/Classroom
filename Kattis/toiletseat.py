@@ -1,5 +1,6 @@
 seat_position = input()
 
+
 def up(seat_position):
     start = seat_position[0]
     seat_position = seat_position[1:]
@@ -10,6 +11,7 @@ def up(seat_position):
         elif val == "D":
             res += 2
     return res
+
 
 def down(seat_position):
     start = seat_position[0]
@@ -22,12 +24,14 @@ def down(seat_position):
             res += 2
     return res
 
+
 def leave(seat_position):
     res = 0
     for i in range(1, len(seat_position)):
         if seat_position[i] != seat_position[i - 1]:
             res += 1
     return res
+
 
 print(up(seat_position))
 print(down(seat_position))

@@ -25,6 +25,7 @@ def down(toilets):
             answer = (countU * 2 - 1)
     return answer
 
+
 print(up(sequence))
 print(down(sequence))
 for i in range(len(sequence) - 1):

@@ -15,7 +15,7 @@ while True:
                 d[playerB] += 1
             d[playerA+"g"] += 1
             d[playerB+"g"] += 1
-    
+
     for i in range(1, players + 1):
         if str(i)+"g" not in d:
             print("-")

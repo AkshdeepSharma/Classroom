@@ -9,4 +9,3 @@ if (roundsDone // N) % 2 == 0:
     print('paul')
 else:
     print('opponent')
-

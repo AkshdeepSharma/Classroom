@@ -18,4 +18,5 @@ while True:
         if B[j] in A:
             break
         j += 1
-    print(str(A[0]) + " needs " + str(A.index(B[j])) + " steps, " + str(B[0]) + " needs " + str(j) + " steps, they meet at " + str(B[j]))
+    print(str(A[0]) + " needs " + str(A.index(B[j])) + " steps, " +
+          str(B[0]) + " needs " + str(j) + " steps, they meet at " + str(B[j]))

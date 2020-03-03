@@ -9,8 +9,10 @@ def dfs(graph, start, end, visited=None):
             return True
     return False
 
+
 def distance(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
 
 if __name__ == '__main__':
     T = int(input())

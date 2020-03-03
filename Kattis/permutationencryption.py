@@ -12,5 +12,6 @@ while True:
         for j in range(i * len(permutation), i * len(permutation) + len(permutation)):
             code[j] = message[j]
         for k in range(i * len(permutation), i * len(permutation) + len(permutation)):
-            message[k] = code[permutation[k - i * len(permutation)] + i * len(permutation) - 1]
+            message[k] = code[permutation[k - i *
+                                          len(permutation)] + i * len(permutation) - 1]
     print("'" + "".join(message) + "'")

@@ -8,6 +8,7 @@ def find(set_data, count, i):
         set_data[i] = find(set_data, count, set_data[i])
         return set_data[i]
 
+
 def union(set_data, count, i, j):
     pi, pj = find(set_data, count, i), find(set_data, count, j)
     if pi != pj:
@@ -15,6 +16,7 @@ def union(set_data, count, i, j):
         count[pi] += count[pj]
         count[pj] = count[pi]
     return count[pi]
+
 
 N = int(input())
 for _ in range(N):

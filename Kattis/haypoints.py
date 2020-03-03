@@ -6,6 +6,7 @@ def hayPoints(dictionary, job_description):
             salary += dictionary[word]
     return salary
 
+
 if __name__ == "__main__":
     dic = {}
     mn = input().split()

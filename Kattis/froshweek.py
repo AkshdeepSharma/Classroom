@@ -14,6 +14,7 @@ def merge(left, right):
     res.extend(right[j:])
     return res, inversions
 
+
 def count_inversions(arr):
     if len(arr) < 2:
         return arr, 0
@@ -23,6 +24,7 @@ def count_inversions(arr):
     merged, inv_total = merge(left, right)
     inv_total += inv_left + inv_right
     return merged, inv_total
+
 
 N = int(input())
 student_numbers = [int(input()) for _ in range(N)]

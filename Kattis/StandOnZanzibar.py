@@ -7,5 +7,5 @@ for i in range(testCases):
         if int(turtles[j]) > int(turtles[j + 1]):
             break
         elif int(turtles[j]) * 2 < int(turtles[j + 1]):
-            numberOfTurtles += ((int(turtles[j+ 1])) - (int(turtles[j]) * 2))
+            numberOfTurtles += ((int(turtles[j + 1])) - (int(turtles[j]) * 2))
     print(numberOfTurtles)

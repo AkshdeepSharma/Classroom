@@ -12,4 +12,3 @@ for i in range(N):
     print(a)
     print(b)
     print(answer)
-

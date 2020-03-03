@@ -8,7 +8,7 @@ for i in range(1, N + 1):
         print("FizzBuzz")
     elif i % x == 0:
         print("Fizz")
-    elif i % y ==0:
+    elif i % y == 0:
         print("Buzz")
     else:
         print(i)

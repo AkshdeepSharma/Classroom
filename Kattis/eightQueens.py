@@ -3,7 +3,7 @@ def isValid(grid):
         return False
     if any(col.count("*") != 1 for col in [*zip(*grid)]):
         return False
-    
+
     starts = [(x, 0) for x in range(8)] + [(0, y) for y in range(8)]
 
     for start in starts:
@@ -18,6 +18,7 @@ def isValid(grid):
         if count > 1 or count2 > 1:
             return False
     return True
+
 
 input_grid = []
 for i in range(8):

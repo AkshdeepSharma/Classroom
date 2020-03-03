@@ -15,7 +15,8 @@ while True:
     xy = sorted(xy)
 
     for j in range(len(xy) - 1):
-        magnitude.append((float(xy[j][0]) - float(xy[j + 1][0])) ** 2 + ((float(xy[j][1]) - float(xy[j + 1][1])) ** 2) ** 0.5)
+        magnitude.append((float(xy[j][0]) - float(xy[j + 1][0])) **
+                         2 + ((float(xy[j][1]) - float(xy[j + 1][1])) ** 2) ** 0.5)
 
     for k in magnitude:
         print(k)

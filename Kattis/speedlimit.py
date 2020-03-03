@@ -10,5 +10,6 @@ while True:
         if j == 0:
             distance += int(pairs[j][0]) * int(pairs[j][1])
         else:
-            distance += int(pairs[j][0]) * (int(pairs[j][1]) - int(pairs[j - 1][1]))
+            distance += int(pairs[j][0]) * \
+                (int(pairs[j][1]) - int(pairs[j - 1][1]))
     print(str(distance), 'miles')

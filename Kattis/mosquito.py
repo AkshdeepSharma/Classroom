@@ -13,7 +13,6 @@ for i in range(1, N + 1):
     larvae = L - (L - R)
     pupae = P - (P - S)
 
-
     L += E
 
 print(M)

@@ -11,16 +11,20 @@ def cross(board, num):
     if len(rows) == 0:
         return None
     for cell in cells:
-        cell_rows = {x for x in range((cell // 3) * 3, (cell // 3 + 1) * 3) if x in rows}
-        cell_cols = {x for x in range((cell % 3) * 3, (cell % 3 + 1) * 3) if x in cols}
+        cell_rows = {x for x in range(
+            (cell // 3) * 3, (cell // 3 + 1) * 3) if x in rows}
+        cell_cols = {x for x in range(
+            (cell % 3) * 3, (cell % 3 + 1) * 3) if x in cols}
         if len(cell_rows) == 0 or len(cell_cols) == 0:
             raise Exception()
-        curr_position = [(i, j) for i in cell_rows for j in cell_cols if board[i][j] == "."]
+        curr_position = [(i, j)
+                         for i in cell_rows for j in cell_cols if board[i][j] == "."]
         if len(curr_position) == 0:
             raise Exception()
         if len(curr_position) == 1:
             return curr_position[0]
     return None
+
 
 if __name__ == "__main__":
     board = []
