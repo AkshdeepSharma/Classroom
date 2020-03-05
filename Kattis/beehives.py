@@ -1,28 +1,34 @@
-while True:
-    dN = input().split(' ')
-    xy = []
-    d = float(dN[0])
-    N = int(dN[1])
-    magnitude = []
-    sour, sweet = 0, 0
-    if dN == ['0.0', '0']:
-        break
+from math import sqrt
 
-    for i in range(N):
-        xyCoordinates = input().split(' ')
-        xy.append(xyCoordinates)
 
-    xy = sorted(xy)
-
-    for j in range(len(xy) - 1):
-        magnitude.append((float(xy[j][0]) - float(xy[j + 1][0])) **
-                         2 + ((float(xy[j][1]) - float(xy[j + 1][1])) ** 2) ** 0.5)
-
-    for k in magnitude:
-        print(k)
-        if k <= d:
-            sour += 1
-        else:
+def countSweetAndSourHives(distance, hives):
+    sweet, sour = 0, 0
+    for i in range(len(hives)):
+        presour = sour
+        for j in range(len(hives)):
+            if i == j:
+                continue
+            curr_distance = sqrt(
+                (hives[i][0] - hives[j][0]) ** 2 + (hives[i][1] - hives[j][1]) ** 2)
+            if curr_distance <= distance:
+                sour += 1
+                break
+        if sour == presour:
             sweet += 1
+    return f'{sour} sour, {sweet} sweet'
 
-    print(str(sour), 'sour', str(sweet), 'sweet')
+
+def main():
+    inp = input().split()
+    distance, num_hives = float(inp[0]), int(inp[1])
+    while distance + num_hives != 0:
+        hives = []
+        for _ in range(num_hives):
+            hives.append(list(map(float, input().split())))
+        print(countSweetAndSourHives(distance, hives))
+        inp = input().split()
+        distance, num_hives = float(inp[0]), int(inp[1])
+
+
+if __name__ == "__main__":
+    main()
