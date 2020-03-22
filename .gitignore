@@ -3,3 +3,4 @@ tests/
 venv
 .idea
 .vscode
+Kattis/wheresmyinternet.py
