@@ -21,8 +21,8 @@ def main():
             adj_list[rule[i]].add(rule[0][:-1])
     changed_file = input()
     ans = bfs(adj_list, changed_file)
-    for dep in ans:
-        print(dep)
+    for dependency in ans:
+        print(dependency)
 
 
 if __name__ == '__main__':
