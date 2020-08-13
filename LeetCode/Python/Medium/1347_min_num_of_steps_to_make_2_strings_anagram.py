@@ -3,10 +3,9 @@ class Solution:
         word_count = {}
         count = 0
         for c in s:
-            if c in word_count:
-                word_count[c] += 1
-            else:
-                word_count[c] = 1
+            if c not in word_count:
+                word_count[c] = 10
+            word_count[c] += 1
         for c in t:
             if c in word_count and word_count[c] > 0:
                 word_count[c] -= 1
