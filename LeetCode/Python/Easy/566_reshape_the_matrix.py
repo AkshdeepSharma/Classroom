@@ -1,13 +1,12 @@
+from functools import reduce
+
+
 class Solution:
     def matrixReshape(self, nums: List[List[int]], r: int, c: int) -> List[List[int]]:
-        if len(nums) * len(nums[0]) != r * c:
+        ans = []
+        if r * c != len(nums) * len(nums[0]):
             return nums
-        res = []
-        temp = []
-        for i in range(len(nums)):
-            for j in range(len(nums[i])):
-                temp.append(nums[i][j])
-                if len(temp) == c:
-                    res.append(temp)
-                    temp = []
-        return res
+        flat_nums = reduce(lambda x, y: x + y, nums)
+        for i in range(0, len(flat_nums), c):
+            ans.append(flat_nums[i:i + c])
+        return ans
