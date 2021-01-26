@@ -3,7 +3,7 @@
 Where all the learning happens.
 
 These files contain a lot of solutions to competitive programming problems solved by me. Feel free to look at/use them.
-Some sites (such as Leetcode) like to change their specific problem numbers over time, so the problem number that I prefix my files with may not accurately reflect what the actual problem number is. I would recommend searching with both the problem number and the title of the problem or keywords from the problem title (I do like to condense the problem names as much as possible).
+**Some sites (such as Leetcode) like to change their specific problem numbers over time, so the problem number that I prefix my files with may not accurately reflect what the actual problem number is.** I would recommend searching with both the problem number and the title of the problem or keywords from the problem title (I do like to condense the problem names as much as possible).
 
 **Includes problems from:**
 
