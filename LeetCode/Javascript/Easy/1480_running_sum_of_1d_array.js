@@ -1,4 +1,4 @@
-var runningSum = function(nums) {
+const runningSum = (nums) => {
     let ans = [];
     let runningSum = 0;
     for(let i=0; i < nums.length; i++){

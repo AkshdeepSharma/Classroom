@@ -1,4 +1,4 @@
-var numJewelsInStones = function(jewels, stones) {
+const numJewelsInStones = (jewels, stones) => {
     let ans = 0;
     const setJewels = new Set(jewels);
     for (let i=0; i < stones.length; i++) {
